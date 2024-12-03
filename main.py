@@ -101,7 +101,7 @@ async def predict_items(request: Request) -> StreamingResponse:
     try:
         df_records = df.to_dict(orient='records')
         for i in range(len(df_records)):
-            try: df_records[i]['predict_price'] = predict_item(Item(**df_records[i]))
+            try: df_records[i]['predicted_price'] = predict_item(Item(**df_records[i]))
             except: continue
         result_df = pd.DataFrame(df_records)
         csv_buffer = BytesIO()
