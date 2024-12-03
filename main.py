@@ -8,7 +8,7 @@ import uvicorn
 import pickle
 import uvicorn
 
-with open('model_preprocessors.pkl', 'rb') as file:
+with open('model_preprocessors.pickle', 'rb') as file:
     data = pickle.load(file)
     model = data['model']
     encoder = data['encoder']
